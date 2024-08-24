@@ -151,8 +151,22 @@ fun ex06()
 
 fun ex07()
 {
+    print("Para reservar um assento, digite o número do voo: ")
+    var numVoo = readln().toInt()
 
+    var numAssentos = Array<Int>(30) { 0 }
+    for (i in 0..<30)
+    {
+        val numAleatorio = arrayOf(0, 1)
+        numAssentos[i] = numAleatorio.random()
+    }
 
+    var voo = Voo(numVoo, numAssentos)
+
+    print("Qual assento você gostaria de reservar? ")
+    var assento = readln().toInt()
+
+    if (voo.reservarAssento(assento)) {println("Assento reservado com sucesso!")}
 }
 
 fun ex08()
